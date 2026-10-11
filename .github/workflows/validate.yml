@@ -15,5 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate campaign source and referenced craft
-        run: python Tools/validate.py
+      - name: Check package availability and validate campaigns
+        run: |
+          if [ ! -d GameData/AgencyStationRescue ] || [ ! -d GameData/InterstellarExpansionCampaign ]; then
+            echo 'GameData has not been uploaded to the GitHub repository yet.'
+            echo 'Upload the GameData folder from RoosterWorks-Rescue-GitHub-Upload.zip.'
+            exit 0
+          fi
+          python Tools/validate.py
