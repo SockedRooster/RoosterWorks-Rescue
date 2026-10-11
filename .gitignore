@@ -1,5 +1,6 @@
-# Local archives and development outputs
+# Ignore local ZIP builds, but allow the one-time source import archive
 *.zip
+!RoosterWorks-Rescue-GitHub-Upload.zip
 /dist/
 /build/
 *.log
@@ -9,5 +10,3 @@ __pycache__/
 .vscode/
 .DS_Store
 Thumbs.db
-
-# All gameplay .cfg/.craft and reference .txt files are tracked.

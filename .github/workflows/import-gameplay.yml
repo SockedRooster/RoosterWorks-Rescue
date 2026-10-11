@@ -1,0 +1,67 @@
+name: Import RoosterWorks Rescue gameplay ZIP
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'RoosterWorks-Rescue-GitHub-Upload.zip'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+
+      - name: Extract exactly the expected GameData files and validate
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          from hashlib import sha256
+          from subprocess import run
+          import shutil
+          archive=Path('RoosterWorks-Rescue-GitHub-Upload.zip')
+          if not archive.exists():
+              print('No import archive present; skipping.')
+              raise SystemExit(0)
+          root=Path.cwd()
+          expected={}
+          for line in (root/'CHECKSUMS-SHA256.txt').read_text().splitlines():
+              if not line.strip() or line.startswith('#'):
+                  continue
+              digest, rel=line.split('  ',1)
+              expected[rel]=digest
+          assert len(expected)==20
+          with ZipFile(archive) as z:
+              assert z.testzip() is None
+              names=[n for n in z.namelist() if not n.endswith('/')]
+              assert len(names)==len(set(names)), 'Duplicate ZIP paths'
+              assert all(not n.startswith('/') and '..' not in Path(n).parts and '\\' not in n for n in names), 'Unsafe ZIP entry'
+              game={n for n in names if n.startswith('GameData/')}
+              assert game==set(expected), f'Incorrect gameplay files: {game.symmetric_difference(expected)}'
+              for name in sorted(game):
+                  data=z.read(name)
+                  assert sha256(data).hexdigest()==expected[name], f'Unexpected gameplay bytes: {name}'
+                  dst=root/name
+                  dst.parent.mkdir(parents=True,exist_ok=True)
+                  dst.write_bytes(data)
+          run(['python','Tools/validate.py'],check=True)
+          PY
+
+      - name: Commit imported gameplay, remove temporary ZIP
+        run: |
+          if [ ! -f RoosterWorks-Rescue-GitHub-Upload.zip ]; then
+            echo 'Archive absent; nothing to import.'
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add GameData/
+          git rm -f RoosterWorks-Rescue-GitHub-Upload.zip
+          git commit -m "Import verified RoosterWorks Rescue gameplay source"
+          git push origin HEAD:main
