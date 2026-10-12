@@ -1,0 +1,49 @@
+INTER-AGENCY RESCUE & SALVAGE - EMERGENCY STATE MANIFEST v2.19
+================================================================
+
+AURORA HAVEN - Kerbin orbit
+  Passive shielding: 35%
+  Broken: primary reaction wheel; 2x long-range relay transmitters
+  Supplies: EC 35%, Food 12%, Water 12%, Oxygen 15%, Nitrogen 25%
+
+SELENE ARK - Dres orbit
+  Passive shielding: 80%
+  Active Shield: present
+  Broken: 4x main solar arrays; 1x long-range relay transmitter
+  Supplies: EC ~15%, Food ~18%, Water ~27%, Oxygen ~20%, Nitrogen ~30%
+
+MINTAKA OBSERVATORY - Minmus orbit
+  Passive shielding: 55%
+  Active Shield: present
+  Broken: 8x RCS thrusters
+  Supplies: MonoPropellant 3%, EC 50%, Food 20%, Water 20%, Oxygen 25%,
+            Nitrogen 35%
+
+ARES MERIDIAN - Moho orbit
+  Passive shielding: 90%
+  Active Shield: present
+  Broken: primary reaction wheel; 16x RCS thrusters; 1x deep-space relay
+  Supplies: EC 25%, Food 65%, Water 65%, Oxygen 75%, Nitrogen 75%
+
+NORTHSTAR FRONTIER BASE - Mun
+  Passive shielding: 70%
+  Broken: base-core process controller; communications transmitter;
+          4x main solar arrays
+  Supplies: EC 0%
+
+HORIZON FROSTLINE BASE - Minmus
+  Passive shielding: 65%
+  Broken: 3x habitat process controllers; greenhouse controller;
+          communications transmitter
+  Supplies: Water 0%, Oxygen 2%, Nitrogen 0%, Food 60%, EC 60%
+
+VALLES RESEARCH COMPLEX - Duna
+  Passive shielding: 60%
+  Broken: 3x blanket solar arrays; 2x greenhouse process controllers;
+          communications transmitter; radiator cooling system
+  Supplies: EC 0%, Food 50%, Water 50%
+
+GILLY FAR-SIDE DEPOT - Gilly
+  Passive shielding: 85%
+  Broken: primary reaction wheel; 1x long-range relay; 2x command/data links
+  Supplies: EC 10%, Food 10%, Water 10%, Oxygen 10%, Nitrogen 20%

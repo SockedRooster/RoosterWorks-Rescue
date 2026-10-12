@@ -1,0 +1,31 @@
+INTERSTELLAR ASSET STATE MANIFEST - v1.2
+
+Gurdamma Sentinel Station
+  Location: Gurdamma orbit (SMA 830 km; ~250 km altitude)
+  Passive Shielding: 85%
+  Active Shield: yes
+  Broken systems: 4x solar array; 1x long-range relay
+
+Donk Frontier Base
+  Location: Donk surface (-12.50, 48.00)
+  Passive Shielding: 80%
+  Active Shield: no
+  Broken systems: 3x relay; 2x solar array; 1x greenhouse controller
+  Resource state: EC 25%, Food 30%, Water 10%, Oxygen 12%, Nitrogen 20%
+
+Plock Echo Probe
+  Location: Plock orbit (SMA 500 km)
+  Crew: none
+  Broken systems: reaction wheel, primary relay, 3x auxiliary transmitters,
+                  3x solar arrays
+  Resource state: EC 0%, MonoPropellant 10%
+
+Bop Leviathan
+  Location: Bop orbit (SMA 165 km; ~100 km altitude)
+  Passive Shielding: 80%
+  Active Shield: present but failed
+  Crew: none
+  Broken systems: reaction wheel, Active Shield emitter, reactor controller,
+                  long-range relay, 4x RCS
+  Resource state: EC 2%, Food 35%, Water 35%, Oxygen 30%, Nitrogen 40%,
+                  MonoPropellant 20%
