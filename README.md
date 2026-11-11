@@ -55,4 +55,15 @@ The game configs and craft are preserved from the approved v2.27/v1.3 master. Th
 
 ## Support
 
-Report issues at [GitHub Issues](https://github.com/SockedRooster/RoosterWorks-Rescue/issues). MIT license applies to original RoosterWorks content; Kerbal Space Program and required third-party projects remain separately licensed.
+Report issues at [GitHub Issues](https://github.com/SockedRooster/RoosterWorks-Rescue/issues). RoosterWorks content follows the dual license described below; Kerbal Space Program and required third-party projects remain separately licensed.
+
+## License
+
+Copyright (c) 2026 SockedRooster.
+
+This project uses **dual licensing**:
+
+- **Art assets:** All `.dds`, `.png`, and `.mu` files are **All Rights Reserved**. You may not redistribute or re-use these assets without express permission from the author.
+- **Everything else:** Original source code, configuration files, documentation, and other non-art files are distributed under the **MIT License**, subject to its terms.
+
+See the full [LICENSE](LICENSE) file for the MIT permission notice, conditions, and warranty disclaimer. Third-party content and dependencies retain their respective licenses; this notice does not grant rights to third-party assets.
